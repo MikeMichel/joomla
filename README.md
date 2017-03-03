@@ -1,4 +1,4 @@
-This is a  docker-compose file for joomla dev versions (not ready for production!)
+This is a  docker-compose file for joomla dev versions (not ready for production!). Parts of this repo are taken from the official joomla docker repo.
 
 ## How-to run
 
