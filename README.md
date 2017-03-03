@@ -9,3 +9,6 @@ You should be able then to access the joomla installation at http://localhost:80
 ## Host it at sloppy.io
 
 https://sloppy.io is a docker hosting platform. You get free *.sloppy.zone domains and free lets encrypt ssl certificates for your own domains.
+
+Here is a video how to setup up joomla at sloppy.io https://vimeo.com/206595268
+

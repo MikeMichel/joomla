@@ -1,0 +1,34 @@
+version: 'v1'
+project: "joomla-dev"
+services:
+  frontend:
+    joomla:
+      image: mikemichel/joomla:3.7-beta3
+      domain: joomla-dev.sloppy.zone
+      instances: 1
+      mem: 512
+      ports: 80
+      env:
+        JOOMLA_DB_HOST: mysql.backend.joomla-dev
+        JOOMLA_DB_NAME: joomla
+        JOOMLA_DB_USER: admin
+        JOOMLA_DB_PASSWORD: secret
+      depends_on:
+        - "../backend/mysql"
+      volumes:
+        - path: "/var/www/html"
+          size: "8GB"
+
+  backend:
+    mysql:
+      image: mysql:8
+      instances: 1
+      mem: 512
+      env:
+        MYSQL_ROOT_PASSWORD: example
+        MYSQL_USER: admin
+        MYSQL_PASSWORD: secret
+        MYSQL_DATABASE: joomla
+      volumes:
+        - path: "/var/lib/mysql"
+          size: "8GB"
